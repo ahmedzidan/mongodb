@@ -8,7 +8,7 @@ def initPortForward(namespace, pod):
   return subprocess.Popen(shlex.split(cmd))
 
 def getPrimaryPod(username, password):
-  getcmd ="mongo 'mongodb://127.0.0.1:27017' --username "+username+ " --password "+password+" --eval 'rs.isMaster().primary'"
+  getcmd ="mongosh 'mongodb://127.0.0.1:27017' --username "+username+ " --password "+password+" --eval 'rs.isMaster().primary'"
   result = subprocess.run(shlex.split(getcmd), capture_output=True, universal_newlines=True)
   result = result.stdout.encode('utf-8')
   primaryPodUrl = subprocess.run(["grep", "svc.cluster.local"], capture_output=True, input=result).stdout

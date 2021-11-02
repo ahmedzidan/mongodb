@@ -10,7 +10,7 @@ Goal:
 ## Prerquist
 - Python3 
 - Kubectl 
-- Mongo shell client
+- [Mongo shell client](https://docs.mongodb.com/mongodb-shell/install/#std-label-mdb-shell-install)
 
 ## How to use it. 
 - Download the script
